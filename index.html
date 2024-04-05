@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>Home</title>
     <link rel="icon" href="assets/SOUL1.png" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-		<div class="jumbotron">
+        <div class="jumbotron">
             <img src="assets/SOUL1.png" alt="" />
             <h2>Awaken Your Artistic Soul</h2>
             <p>Bersiaplah Untuk Memulai Perjalanan Seni Anda dan Temukan Kedalaman Kreativitas Dalam Diri</p>
@@ -38,13 +37,106 @@
     </header>
 
     <main>
-        <img src="assets/gabung.png" alt="" />
-        <br><button type="button">Get Started</button><br>
+        <section class="gallery">
+        <div class = "carousel">
+            <div class="cards-container">
+                <div class="card">
+                <img src="assets/lukis1.jpg" alt="" />
+                </div>
+
+                <div class="card">
+                <img src="assets/senilukis.jpg" alt="" />
+                </div>
+
+                <div class="card">
+                <img src="assets/lukis3.jpeg" alt="" />
+                </div>
+
+                <div class="card">
+                <img src="assets/lukis4.jpeg" alt="" />
+                </div>
+
+                <div class="card">
+                <img src="assets/lukis5.jpeg" alt="" />
+                </div>
+
+                <div class="card">
+                <img src="assets/lukis6.jpeg" alt="" />
+                </div>
+
+                <button class="prev" onclick="moveCarousel(-1)">❮</button>
+                <button class="next" onclick="moveCarousel(1)">❯</button>
+        </div>
+        </div>
+        </section>
+
+        <section class="description">
+            <div class="cards-container">
+            <div class="card">
+            <h1 align = "center">Welcome to Soul Studio</h1>
+            <p align = "center"> Soul Studio adalah ruang kreatif yang didedikasikan untuk membangkitkan jiwa melalui seni. Kami mengajak Anda semua untuk bergabung bersama kami dalam perjalanan artistik ini. Silahkan klik tombol di bawah untuk bersiap memulai perjalanan yang sesungguhnya. </p>
+        </div>
+        </div>
+            <div class="button-container">
+            <div class="button">
+            <input
+              id="getStartedButton"
+              type="button"
+              class="button"
+              name="btn_proses"
+              value="Let's Start The Journey"
+              onClick="proses()" />
+            </div>
+        </div>
+        </div>
+        </section>
     </main>
 
     <footer>
         <h4>&copy; Soul Studio 2024</h4>
     </footer>
+
+    <!-- Script DOM -->
+    <script>
+        // Mengambil elemen tombol "Get Started" dari DOM
+        const getStartedButton = document.getElementById('getStartedButton');
+        
+        // Menambahkan event listener untuk menangani klik pada tombol "Get Started"
+        getStartedButton.addEventListener('click', function() {
+            alert('Welcome to Soul Studio! Let\'s start your artistic journey.');
+            // Di sini Anda bisa menambahkan logika tambahan sesuai kebutuhan, misalnya mengarahkan pengguna ke halaman lain, dll.
+
+        // Mengubah bentuk kursor menjadi tangan saat kursor masuk ke teks pada h4
+        joinCommunityText.addEventListener('mouseenter', function() {
+        joinCommunityText.style.cursor = 'pointer';
+            });
+        });
+    </script>
+
+    <!-- Script Carousel -->
+    <script>
+        var currentIndex = 0;
+        var cards = document.querySelectorAll('.card');
+
+        function moveCarousel(n) {
+            currentIndex += n;
+            showCards();
+        }
+
+        function showCards() {
+            var visibleCards = 3; // Menentukan jumlah kartu yang ditampilkan
+            var lastIndex = cards.length - visibleCards;
+
+            if (currentIndex < 0) {
+                currentIndex = 0;
+            } else if (currentIndex > lastIndex) {
+                currentIndex = lastIndex;
+            }
+
+            var translateValue = -currentIndex * (cards[0].offsetWidth + 20); // Menghitung nilai translasi
+            document.querySelector('.cards-container').style.transform = 'translateX(' + translateValue + 'px)';
+                }
+    </script>
 </body>
 </html>
 
