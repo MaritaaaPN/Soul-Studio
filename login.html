@@ -3,46 +3,72 @@
   <head>
     <title>Login</title>
     <link rel="icon" href="assets/SOUL1.png" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/lore.css" />
 	</head>
 
 	<body>
 	  <div class="container">
 		<header>
-		  <nav>
-        <div class="logo">
-          <img src="assets/SOUL1.png" alt="" />
+        <div class="lore-box">
+          <div class="logo">
+            <img src="assets/SOUL1.png" alt="" />
+          </div>
+            <h2>LOGIN</h2>
+            <form>
+                <div class="user-box">
+                    <input type="email" id="email" name="" required="">
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" id="password" name="" required="">
+                    <label>Password</label>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                <input type="submit" name="" value="Login" onClick="submitForm()">
+            </form>
+            <div class="register-link">
+              Create Account Here <a href="register.html">Register</a>
+            </div>
         </div>
-          <i class="fas fa-bars"></i>
-      </nav>
-		</header> 
-
-		<main>
-      <div class="center">
-        <div class ="form-login">
-		      <h3>LOGIN</h3>
-		        <table>
-              <tr>
-                <td> Email Address </td>
-                <td>:</td>
-                <td><input type="text" name = "email"></td>
-              </tr> 
-              <tr>
-                <td> Password </td>
-                <td>:</td>
-                  <td><input type="password" name = "password"></td>
-              </tr>
-            </table>
-              <br><input type="checkbox" name="a" value="Remember Me" /> Remember Me <br />
-              <br><button type="submit">Login</button>
-              <a href="register.html">Register</a></br>
-        </div>
-      </div>
+    </div>
 		</main>
 
 	  <footer>
 			<h4>&copy; Soul Studio 2024</h4>
 	  </footer>
-    </div>
+
+    <script>
+      // Asyncronous
+        async function submitForm() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        // Jika terdapat kolom yang belum terisi akan menampilkan alert
+        if (email.trim() === "" || password.trim() === "") {
+            alert("Please Fill Out This Field!");
+            return;
+        }
+       
+      // Web Storages (Local Storages), Promise
+        // Konfirmasi untuk login
+        var confirmation = confirm("Are You Sure You Want To Login?");
+        if (confirmation) {
+            // Simulasi proses login dengan timeout 1 detik
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            alert("Saved Accounts. Login Successful!"); // Pesan login berhasil
+            // Simpan data pengguna ke dalam localStorage
+            localStorage.setItem("email", email);
+            localStorage.setItem("password", password);
+            // Redirect menuju ke halaman setelah login
+            window.location.href = "index.html";
+        }
+
+
+      }
+      </script>
+
 	</body>
 </html>
+

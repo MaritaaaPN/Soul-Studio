@@ -38,57 +38,55 @@
 
     <main>
         <section class="gallery">
-        <div class = "carousel">
-            <div class="cards-container">
-                <div class="card">
-                <img src="assets/lukis1.jpg" alt="" />
-                </div>
+            <div class="carousel">
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="assets/lukis1.jpg" alt="" />
+                    </div>
 
-                <div class="card">
-                <img src="assets/senilukis.jpg" alt="" />
-                </div>
+                    <div class="card">
+                        <img src="assets/senilukis.jpg" alt="" />
+                    </div>
 
-                <div class="card">
-                <img src="assets/lukis3.jpeg" alt="" />
-                </div>
+                    <div class="card">
+                        <img src="assets/lukis3.jpeg" alt="" />
+                    </div>
 
-                <div class="card">
-                <img src="assets/lukis4.jpeg" alt="" />
-                </div>
+                    <div class="card">
+                        <img src="assets/lukis4.jpeg" alt="" />
+                    </div>
 
-                <div class="card">
-                <img src="assets/lukis5.jpeg" alt="" />
-                </div>
+                    <div class="card">
+                        <img src="assets/lukis5.jpeg" alt="" />
+                    </div>
 
-                <div class="card">
-                <img src="assets/lukis6.jpeg" alt="" />
-                </div>
+                    <div class="card">
+                        <img src="assets/lukis6.jpeg" alt="" />
+                    </div>
 
-                <button class="prev" onclick="moveCarousel(-1)">❮</button>
-                <button class="next" onclick="moveCarousel(1)">❯</button>
-        </div>
-        </div>
+                    <button class="prev" onclick="moveCarousel(-1)">❮</button>
+                    <button class="next" onclick="moveCarousel(1)">❯</button>
+                </div>
+            </div>
         </section>
 
         <section class="description">
             <div class="cards-container">
-            <div class="card">
-            <h1 align = "center">Welcome to Soul Studio</h1>
-            <p align = "center"> Soul Studio adalah ruang kreatif yang didedikasikan untuk membangkitkan jiwa melalui seni. Kami mengajak Anda semua untuk bergabung bersama kami dalam perjalanan artistik ini. Silahkan klik tombol di bawah untuk bersiap memulai perjalanan yang sesungguhnya. </p>
-        </div>
-        </div>
-            <div class="button-container">
-            <div class="button">
-            <input
-              id="getStartedButton"
-              type="button"
-              class="button"
-              name="btn_proses"
-              value="Let's Start The Journey"
-              onClick="proses()" />
+                <div class="card">
+                    <h1 align="center">Welcome to Soul Studio</h1>
+                    <p align="center">Soul Studio adalah ruang kreatif yang didedikasikan untuk membangkitkan jiwa melalui seni. Kami mengajak Anda semua untuk bergabung bersama kami dalam perjalanan artistik ini. Silahkan klik tombol di bawah untuk bersiap memulai perjalanan yang sesungguhnya.</p>
+                </div>
             </div>
-        </div>
-        </div>
+            <div class="button-container">
+                <div class="button">
+                    <input
+                      id="getStartedButton"
+                      type="button"
+                      class="button"
+                      name="btn_proses"
+                      value="Let's Start The Journey" />
+                </div>
+            </div>
         </section>
     </main>
 
@@ -100,21 +98,30 @@
     <script>
         // Mengambil elemen tombol "Get Started" dari DOM
         const getStartedButton = document.getElementById('getStartedButton');
-        
+
         // Menambahkan event listener untuk menangani klik pada tombol "Get Started"
         getStartedButton.addEventListener('click', function() {
+            
+            // Alert Box
             alert('Welcome to Soul Studio! Let\'s start your artistic journey.');
-            // Di sini Anda bisa menambahkan logika tambahan sesuai kebutuhan, misalnya mengarahkan pengguna ke halaman lain, dll.
 
-        // Mengubah bentuk kursor menjadi tangan saat kursor masuk ke teks pada h4
-        joinCommunityText.addEventListener('mouseenter', function() {
-        joinCommunityText.style.cursor = 'pointer';
-            });
+            // Confirm Box
+            var confirmation = confirm('Are you ready to dive into the world of art?');
+            if (confirmation) {
+                alert('Great! Let\'s get started.');
+            } else {
+                alert('No problem! Take your time.');
+            }
+
+            // Prompt Box
+            var name = prompt('Please enter your name:');
+            if (name !== null && name !== '') {
+                alert('Nice to meet you, ' + name + '! Enjoy your journey at Soul Studio.');
+            } else {
+                alert('No worries! Feel free to explore anonymously.');
+            }
         });
-    </script>
 
-    <!-- Script Carousel -->
-    <script>
         var currentIndex = 0;
         var cards = document.querySelectorAll('.card');
 
@@ -135,7 +142,7 @@
 
             var translateValue = -currentIndex * (cards[0].offsetWidth + 20); // Menghitung nilai translasi
             document.querySelector('.cards-container').style.transform = 'translateX(' + translateValue + 'px)';
-                }
+        }
     </script>
 </body>
 </html>
