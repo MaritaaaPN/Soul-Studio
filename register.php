@@ -37,7 +37,7 @@
           <input type="submit" name="" value="Register" onClick="submitForm()">
         </form>
         <div class="login-link">
-          <a href="login.html">Login Here</a>
+          <a href="login.php">Login Here</a>
         </div>
       </div>
     </header>
@@ -77,7 +77,7 @@
         localStorage.setItem("password", password);
 
         // Redirect menuju halaman Login
-        window.location.href = "login.html";
+        window.location.href = "login.php";
       }
     }
   </script>

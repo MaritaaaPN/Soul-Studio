@@ -17,10 +17,10 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="login.html">Login</a>
+                        <a href="login.php">Login</a>
                     </li>
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.php">Home</a>
                     </li>
                     <li>
                         <a href="#">Menu</a>
