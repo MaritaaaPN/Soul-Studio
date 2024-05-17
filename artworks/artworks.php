@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8" /> 
 	<link rel="icon" href="../assets/SOUL1.png" />
 	<link rel="stylesheet" href="../css/admin.css" />
 	<!-- Boxicons CDN Link -->
