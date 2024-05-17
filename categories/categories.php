@@ -8,13 +8,13 @@
 	<!-- Boxicons CDN Link -->
 	<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Soul Studio| Artworks</title>
+	<title>Soul Studio| Categories</title>
 </head>
 
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-artwork"></i>
+			<i class="bx bx-category"></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
@@ -25,21 +25,15 @@
 				</a>
 			</li>
 			<li>
-				<a href="../artist/artist.php">
+				<a href="../categories/categories.php">
 					<i class="bx bx-box"></i>
-					<span class="links_name">Artist</span>
+					<span class="links_name">Categories</span>
 				</a>
 			</li>
 			<li>
-				<a href="../artworks/artworks.php">
-					<i class="bx bx-box"></i>
-					<span class="links_name">Artworks</span>
-				</a>
-			</li>
-			<li>
-				<a href="../exhibition/exhibition.php">
+				<a href="../transaction/transaction.php">
 					<i class="bx bx-list-ul"></i>
-					<span class="links_name">Exhibition</span>
+					<span class="links_name">Transaction</span>
 				</a>
 			</li>
 			<li>
@@ -60,17 +54,17 @@
 			</div>
 		</nav>
 		<div class="home-content">
-			<h3>Artworks</h3>
+			<h3>Categories</h3>
 			<button type="button" class="btn btn-tambah">
-				<a href="artworks-entry.php">Tambah Data</a>
+				<a href="categories-entry.php">Tambah Data</a>
 			</button>
 			<table class="table-data">
 				<thead>
 					<tr>
-						<th scope="col" style="width: 20%">Foto Artwork</th>
-                        <th scope="col" style="width: 20%">Judul</th>
-                        <th>Kategori</th>
-						<th scope="col" style="width: 30%">Deskripsi</th>
+						<th scope="col" style="width: 20%">Photo</th>
+                        <th scope="col" style="width: 20%">Title</th>
+                        <th>Categories</th>
+						<th scope="col" style="width: 30%">Description</th>
 						<th scope="col" style="width: 20%">Action</th>
 					</tr>
 				</thead>

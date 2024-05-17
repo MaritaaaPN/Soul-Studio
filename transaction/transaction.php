@@ -8,7 +8,7 @@
    <!-- Boxicons CDN Link -->
    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Soul Studio | Exhibition</title>
+   <title>Soul Studio | Transaction</title>
 </head>
 
 <body>
@@ -25,21 +25,15 @@
             </a>
          </li>
          <li>
-				<a href="../artist/artist.php">
-					<i class="bx bx-box"></i>
-					<span class="links_name">Artist</span>
-				</a>
-			</li>
-         <li>
-            <a href="../artworks/artworks.php">
+            <a href="../categories/categories.php">
                <i class="bx bx-box"></i>
-               <span class="links_name">Artworks</span>
+               <span class="links_name">Categories</span>
             </a>
          </li>
          <li>
-            <a href="../exhibition/exhibition.php">
+            <a href="../transaction/transaction.php">
                <i class="bx bx-list-ul"></i>
-               <span class="links_name">Exhibition</span>
+               <span class="links_name">Transaction</span>
             </a>
          </li>
          <li>
@@ -60,27 +54,26 @@
          </div>
       </nav>
       <div class="home-content">
-         <h3>Exhibition</h3>
+         <h3>Transaction</h3>
          <table class="table-data">
             <thead>
                <tr>
+                  <th>Tanggal</th>
                   <th>Nama</th>
-                  <th>Lokasi</th>
-                  <th>Deskripsi</th>
+                  <th>Judul Karya</th>
+                  <th>Kategori</th>
                   <th>Status</th>
                   <th>Action</th>
                </tr>
             </thead>
             <tbody>
                <tr>
-                  <td>Van Gogh and the Sunflowers</td>
-                  <td>Van Gogh Museum, Amsterdam</td>
+                  <td>10-12-2024</td>
+                  <td>Marita Putri Nabila</td>
+                  <td>Starry Night Over the Rhône</td>
+                  <td>Seni Lukis</td>
                   <td>
-                     Pameran ini menampilkan berbagai lukisan bunga matahari karya Van Gogh, 
-                     memberikan wawasan mendalam tentang teknik, inspirasi, dan pengaruhnya.
-                  </td>
-                  <td>
-                     <p class="Ada">Success</p>
+                     <p class="success">Success</p>
                   </td>
                   <td>
                      <button class="btn_detail"
