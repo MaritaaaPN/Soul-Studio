@@ -1,0 +1,183 @@
+  * {
+	box-sizing: border-box;
+  }
+  
+  /* Body CSS */
+  body {
+	font-family: 'Quicksand', sans-serif;
+	margin: 0;
+	padding: 0;
+  }
+
+  /* Header CSS */
+  header {
+	display: inline;
+  }
+ 
+  /* Jumbotron CSS */
+  .jumbotron {
+	font-size: 20px;
+	padding: 20px;
+	text-align: center;
+	color: rgb(8, 8, 8);
+  }
+
+  /* Navigator Menu */
+  nav a {
+	font-size: 18px;
+	font-weight: 400;
+	text-decoration: none;
+	color: white;
+  }
+  nav a:hover {
+	font-weight: bold;
+  }
+  nav ul {
+	text-align: center;
+	display: flex;
+	gap: 2rem;
+  }
+  nav li {
+	list-style-type: none;
+  }
+  nav {
+	 background-color: #62858d;
+	 padding: 5px;
+	 top: 0;
+  }
+  
+  /* Main CSS */
+  main {
+	padding: 20px;
+	display: flex;
+	border-radius: 20px;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 50px;
+  }
+
+  /* Button Mulai CSS */
+  .button-container {
+	text-align: center;
+  }
+  .button {
+    padding: 0.5rem 0.5rem;
+	margin-left: 30px;
+	border: 3px solid transparent;
+	border-radius: 500px;
+	margin-block-start: 1rem;
+	background-color: #2d3e50;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
+	color: white;
+	cursor: pointer;
+	transition: all 0.15s ease-in;
+  }
+ .button:hover {
+    border: 3px solid #2d3e50;
+	background-color: transparent;
+	color: #2d3e50;
+  }
+
+/* Main section */
+main {
+	padding: 10px;
+}
+.card {
+	width: calc(20% - 20px);
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 20px;
+}
+.card {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* carousel */
+.gallery {
+    overflow: hidden; 
+}
+.carousel {
+    display: flex; 
+    overflow-x: scroll; 
+    padding-bottom: 30px; 
+}
+.cards-container {
+    display: flex; 
+}
+.card {
+    flex: 0 0 auto; 
+    margin-right: 20px; 
+    scroll-snap-align: start;  
+}
+.prev, .next {
+    position: absolute; 
+    top: 110%; 
+    transform: translate(-20%, -500%);
+    border: none;
+    cursor: pointer; 
+}
+.prev {
+    left: 0; /* tombol panah prev di kiri */
+}
+.next {
+    right: 0; /* tombol panah next di kanan */
+}
+
+/* Footer CSS */
+footer {
+	padding: 1px;
+	color: white;
+	background-color:#62858d;
+	text-align: center;
+	font-weight: bold;
+  }
+  aside {
+	flex: 1;
+  }
+
+/* Tampilan Responsive CSS */
+  @media (max-width: 992px) {
+	.slides .navigation .prev .slides .navigation .next {
+		font-size: 18px;
+		padding: 13px;
+	}
+  }
+  @media (max-width: 768px) {
+	.slides .navigation .prev .slides .navigation .next {
+		font-size: 15px;
+		padding: 10px;
+	}
+  }
+  @media (max-width: 576px) {
+	.slides .navigation .prev .slides .navigation .next {
+		font-size: 12px;
+		padding: 7px;
+	}
+  }
+  @media (max-width: 360px) {
+	.slides .navigation .prev .slides .navigation .next {
+		font-size: 11px;
+		padding: 6px;
+	}
+  }
+  
+  
