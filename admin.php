@@ -12,7 +12,7 @@
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-category"></i>
+			<i class="bx bx-artworks"></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
@@ -23,15 +23,21 @@
 				</a>
 			</li>
 			<li>
-				<a href="categories/categories.php">
+				<a href="artist/artist.php">
 					<i class="bx bx-box"></i>
-					<span class="links_name">Categories</span>
+					<span class="links_name">Artist</span>
 				</a>
 			</li>
 			<li>
-				<a href="transaction/transaction.php">
+				<a href="artworks/artworks.php">
+					<i class="bx bx-box"></i>
+					<span class="links_name">Artworks</span>
+				</a>
+			</li>
+			<li>
+				<a href="exhibition/exhibition.php">
 					<i class="bx bx-list-ul"></i>
-					<span class="links_name">Transaction</span>
+					<span class="links_name">Exhibition</span>
 				</a>
 			</li>
 			<li>

@@ -8,13 +8,13 @@
 	<!-- Boxicons CDN Link -->
 	<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Soul Studio | Categories Entry</title>
+	<title>Soul Studio | Artist Entry</title>
 </head>
 
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-category"></i>
+			<i class="bx bx-artworks"></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
@@ -24,16 +24,22 @@
 					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
-			<li>
-				<a href="../categories/categories.php">
+            <li>
+				<a href="../artist/artist.php">
 					<i class="bx bx-box"></i>
-					<span class="links_name">Categories</span>
+					<span class="links_name">Artist</span>
 				</a>
 			</li>
 			<li>
-				<a href="../transaction/transaction.php">
+				<a href="../artworks/artworks.php">
+					<i class="bx bx-box"></i>
+					<span class="links_name">Artworks</span>
+				</a>
+			</li>
+			<li>
+				<a href="../exhibition/exhibition.php">
 					<i class="bx bx-list-ul"></i>
-					<span class="links_name">Transaction</span>
+					<span class="links_name">Exhibition</span>
 				</a>
 			</li>
 			<li>
@@ -54,17 +60,17 @@
 			</div>
 		</nav>
 		<div class="home-content">
-			<h3>Input Categories</h3>
+			<h3>Input Artist</h3>
 			<div class="form-login">
 				<form action="">
-                    <label for="title">Title</label>
-					<input class="input" type="text" name="title" id="title" placeholder="title" />
-					<label for="categories">Categories</label>
-					<input class="input" type="text" name="categories" id="categories" placeholder="Categories" />
-					<label for="categories">Description</label>
-					<input class="input" type="text" name="Description" id="Description" placeholder="Description" />
-					<label for="photo">Photo</label>
-					<input type="file" name="photo" id="photo" style="margin-bottom: 20px" />
+                    <label for="nama">Nama</label>
+					<input class="input" type="text" name="nama" id="nama" placeholder="nama" />
+					<label for="lahir">Tanggal Lahir</label>
+					<input class="input" type="text" name="lahir" id="lahir" placeholder="lahir" />
+					<label for="bangsa">Kebangsaan</label>
+					<input class="input" type="text" name="bangsa" id="bangsa" placeholder="bangsa" />
+                    <label for="bio">Biografi</label>
+					<input class="input" type="text" name="bio" id="bio" placeholder="bio" />
 					<button type="submit" class="btn btn-simpan" name="simpan">
 						Simpan
 					</button>

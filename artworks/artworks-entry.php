@@ -8,32 +8,38 @@
 	<!-- Boxicons CDN Link -->
 	<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Soul Studio | Categories Entry</title>
+	<title>Soul Studio | Artworks Entry</title>
 </head>
 
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-category"></i>
+			<i class="bx bx-artworks"></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
-		<ul class="nav-links">
+		<ul class="nav-links"> 
 			<li>
-				<a href="../admin.html" class="active">
+				<a href="../admin.php" class="active">
 					<i class="bx bx-grid-alt"></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
 			<li>
-				<a href="../categories/categories.html">
+				<a href="../artist/artist.php">
 					<i class="bx bx-box"></i>
-					<span class="links_name">Categories</span>
+					<span class="links_name">Artist</span>
 				</a>
 			</li>
 			<li>
-				<a href="../transaction/transaction.html">
+				<a href="../artworks/artworks.php">
+					<i class="bx bx-box"></i>
+					<span class="links_name">Artworks</span>
+				</a>
+			</li>
+			<li>
+				<a href="../exhibition/exhibition.php">
 					<i class="bx bx-list-ul"></i>
-					<span class="links_name">Transaction</span>
+					<span class="links_name">Exhibition</span>
 				</a>
 			</li>
 			<li>
@@ -54,17 +60,17 @@
 			</div>
 		</nav>
 		<div class="home-content">
-			<h3>Input Categories</h3>
+			<h3>Input Artworks</h3>
 			<div class="form-login">
 				<form action="">
-                    <label for="title">Title</label>
-					<input class="input" type="text" name="title" id="title" placeholder="title" />
-					<label for="categories">Categories</label>
-					<input class="input" type="text" name="categories" id="categories" placeholder="Categories" />
-					<label for="categories">Description</label>
-					<input class="input" type="text" name="Description" id="Description" placeholder="Description" />
-					<label for="photo">Photo</label>
-					<input type="file" name="photo" id="photo" style="margin-bottom: 20px" />
+                    <label for="judul">Judul</label>
+					<input class="input" type="text" name="judul" id="judul" placeholder="judul" />
+					<label for="kategori">Kategori Artwork</label>
+					<input class="input" type="text" name="kategori" id="kategori" placeholder="kategori" />
+					<label for="deskripsi">Deskripsi</label>
+					<input class="input" type="text" name="deskripsi" id="deskripsi" placeholder="deskripsi" />
+					<label for="foto">Foto Artwork</label>
+					<input type="file" name="photo" id="foto" style="margin-bottom: 20px" />
 					<button type="submit" class="btn btn-simpan" name="simpan">
 						Simpan
 					</button>

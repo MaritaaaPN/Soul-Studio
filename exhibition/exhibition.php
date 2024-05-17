@@ -8,7 +8,7 @@
    <!-- Boxicons CDN Link -->
    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Soul Studio | Transaction</title>
+   <title>Soul Studio | Exhibition</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
          <i class="bx bx-category"></i>
          <span class="logo_name">Soul Studio</span>
       </div>
-      <ul class="nav-links">
+      <ul class="nav-links"> 
          <li>
             <a href="../admin.php" class="active">
                <i class="bx bx-grid-alt"></i>
@@ -25,15 +25,21 @@
             </a>
          </li>
          <li>
-            <a href="../categories/categories.php">
+				<a href="../artist/artist.php">
+					<i class="bx bx-box"></i>
+					<span class="links_name">Artist</span>
+				</a>
+			</li>
+         <li>
+            <a href="../artworks/artworks.php">
                <i class="bx bx-box"></i>
-               <span class="links_name">Categories</span>
+               <span class="links_name">Artworks</span>
             </a>
          </li>
          <li>
-            <a href="../transaction/transaction.php">
+            <a href="../exhibition/exhibition.php">
                <i class="bx bx-list-ul"></i>
-               <span class="links_name">Transaction</span>
+               <span class="links_name">Exhibition</span>
             </a>
          </li>
          <li>
@@ -54,26 +60,27 @@
          </div>
       </nav>
       <div class="home-content">
-         <h3>Transaction</h3>
+         <h3>Exhibition</h3>
          <table class="table-data">
             <thead>
                <tr>
-                  <th>Tanggal</th>
                   <th>Nama</th>
-                  <th>Judul Karya</th>
-                  <th>Kategori</th>
+                  <th>Lokasi</th>
+                  <th>Deskripsi</th>
                   <th>Status</th>
                   <th>Action</th>
                </tr>
             </thead>
             <tbody>
                <tr>
-                  <td>10-12-2024</td>
-                  <td>Marita Putri Nabila</td>
-                  <td>Starry Night Over the Rhône</td>
-                  <td>Seni Lukis</td>
+                  <td>Van Gogh and the Sunflowers</td>
+                  <td>Van Gogh Museum, Amsterdam</td>
                   <td>
-                     <p class="success">Success</p>
+                     Pameran ini menampilkan berbagai lukisan bunga matahari karya Van Gogh, 
+                     memberikan wawasan mendalam tentang teknik, inspirasi, dan pengaruhnya.
+                  </td>
+                  <td>
+                     <p class="Ada">Success</p>
                   </td>
                   <td>
                      <button class="btn_detail"
