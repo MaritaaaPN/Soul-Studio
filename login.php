@@ -12,22 +12,23 @@
         <div class="lore-box">
           <div class="logo">
             <img src="assets/SOUL1.png" alt="" />
-          </div>
+          </div> 
           <h2>LOGIN</h2>
-          <form action="login.php" method="POST">
+          <form action="login-proses.php" method="post">
             <div class="user-box">
               <input type="email" id="email" name="email" required="">
               <label for="email">Email Address</label>
             </div>
             <div class="user-box">
               <input type="password" id="password" name="password" required="">
-              <label>Password</label>
+              <label>Password</label>    
             </div>
             <div class="remember-me">
               <input type="checkbox" id="remember" name="remember">
               <label for="remember">Remember me</label>
             </div>
-            <input type="submit" name="login_submit" value="Login">
+            <input type="submit" name="login" value="Login">
+		   </button>
           </form>
           <div class="register-link">
             Create Account Here <a href="register.php">Register</a>

@@ -1,20 +1,27 @@
+<?php
+session_start();
+if ($_SESSION['email'] == null) {
+	header('location:../login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
-	<meta charset="UTF-8" /> 
+	<meta charset="UTF-8" />
 	<link rel="icon" href="../assets/SOUL1.png" />
 	<link rel="stylesheet" href="../css/admin.css" />
 	<!-- Boxicons CDN Link -->
 	<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Soul Studio| Artworks</title>
-</head>
+</head> 
 
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-artwork"></i>
+			<i class="bx bx-category"></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
@@ -31,7 +38,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../artworks/artworks.php">
+				<a href="../artworks/artwork.php">
 					<i class="bx bx-box"></i>
 					<span class="links_name">Artworks</span>
 				</a>
@@ -43,7 +50,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../logout.php">
 					<i class="bx bx-log-out"></i>
 					<span class="links_name">Log out</span>
 				</a>
@@ -56,39 +63,61 @@
 				<i class="bx bx-menu sidebarBtn"></i>
 			</div>
 			<div class="profile-details">
-				<span class="admin_name">Admin</span>
+				<span class="admin_name">Soul Admin</span>
 			</div>
 		</nav>
 		<div class="home-content">
 			<h3>Artworks</h3>
 			<button type="button" class="btn btn-tambah">
-				<a href="artworks-entry.php">Tambah Data</a>
+				<a href="artwork-entry.php">Tambah Data</a>
 			</button>
 			<table class="table-data">
 				<thead>
 					<tr>
 						<th scope="col" style="width: 20%">Foto Artwork</th>
-                        <th scope="col" style="width: 20%">Judul</th>
-                        <th>Kategori</th>
-						<th scope="col" style="width: 30%">Deskripsi</th>
-						<th scope="col" style="width: 20%">Action</th>
+                        <th scope="col" style="width: 15%">Judul</th>
+						<th scope="col" style="width: 10%">Artist</th>
+                        <th scope="col" style="width: 10%">Kategori</th>
+						<th scope="col" style="width: 25%">Deskripsi</th>
+						<th scope="col" style="width: 25%">Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><img src="../assets/senilukis.jpg" alt="" /></td>
-						<td>Starry Night Over the Rhône</td>
-                        <td>Seni Lukis</td>
-						<td>Lukisan tersebut berjudul Starry Night Over the Rhône, adalah karya dari Vincent van Gogh, 
-                            seorang pelukis Belanda yang terkenal dengan gaya Impresionisme dan Post-Impresionisme.
-                            Lukisan ini menunjukkan karakteristik Impresionisme, seperti penggunaan warna yang cerah dan 
-                            sapuan kuas yang terlihat, namun juga menunjukkan ciri khas Van Gogh, seperti penggunaan bentuk 
-                            yang tidak realistis dan fokus pada ekspresi.</td>
-						<td>
-							<button class="btn-edit" onclick="editCategory()">Edit</button>
-							<button class="btn-delete" onclick="deleteCategory()">Hapus</button>
-						</td>
-					</tr>
+				<?php
+					include '../koneksi.php';
+					$sql = "SELECT * FROM tb_artwork";
+					$result = mysqli_query($koneksi, $sql);
+					if (mysqli_num_rows($result) == 0) {
+						echo "
+			   <tr>
+				<td colspan='6' align='center'>
+                           Data Kosong
+                        </td>
+			   </tr>
+				";
+					}
+					while ($data = mysqli_fetch_assoc($result)) {
+						echo "
+                    <tr>
+                      <td>
+                        <img src='../img_artwork/$data[photo]' width='200px'>
+                      </td>
+					  <td>$data[judul]</td>
+                      <td>$data[artist]</td>
+					  <td>$data[kategori]</td>
+                      <td>$data[deskripsi]</td>
+                      <td >
+                        <a class='btn-edit' href=artwork-edit.php?id=$data[id]>
+                               Edit
+                        </a> | 
+                        <a class='btn-delete' href=artwork-hapus.php?id=$data[id]>
+                            Hapus
+                        </a>
+                      </td>
+                    </tr>
+                  ";
+					}
+					?>
 				</tbody>
 			</table>
 		</div>
@@ -96,7 +125,7 @@
 	<script>
 		let sidebar = document.querySelector(".sidebar");
 		let sidebarBtn = document.querySelector(".sidebarBtn");
-		sidebarBtn.onclick = function () {
+		sidebarBtn.onclick = function() {
 			sidebar.classList.toggle("active");
 			if (sidebar.classList.contains("active")) {
 				sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");

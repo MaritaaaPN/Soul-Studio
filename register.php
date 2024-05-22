@@ -13,32 +13,26 @@
           <img src="assets/SOUL1.png" alt="" />
         </div>
         <h2>REGISTER</h2>
-        <form id="registerForm">
+        <form action="register-proses.php" method="post">
           <div class="user-box">
-            <input type="text" id="nama" name="" required="">
+            <input type="text" name="nama" required="">
             <label>Full Name</label>
           </div>
           <div class="user-box">
-            <input type="email" id="email" name="" required="">
+            <input type="email" name="email" required="">
             <label for="email">Email Address</label>
           </div>
           <div class="user-box">
-            <input type="username" id="username" name="" required="">
+            <input type="text" name="username" required="">
             <label for="username">Username</label>
           </div>
           <div class="user-box">
-            <input type="password" id="password" name="" required="">
+            <input type="password" name="password" required="">
             <label>Password</label>
           </div>
-          <div class="user-box">
-            <input type="password" id="confirmPassword" name="" required="">
-            <label>Confirm Password</label>
-          </div>
-          <input type="submit" name="" value="Register" onClick="submitForm()">
+          <input type="submit" name="register" value="Register"> 
         </form>
-        <div class="login-link">
-          <a href="login.php">Login Here</a>
-        </div>
+        
       </div>
     </header>
   </div>
@@ -53,17 +47,13 @@
       var email = document.getElementById("email").value;
       var username = document.getElementById("username").value;
       var password = document.getElementById("password").value;
-      var confirmPassword = document.getElementById("confirmPassword").value;
+
       // Alert jika terdapat kolom yang kosong
-      if (nama.trim() === "" || email.trim() === "" || username.trim() === "" || password.trim() === "" || confirmPassword.trim() === "") {
+      if (nama.trim() === "" || email.trim() === "" || username.trim() === "" || password.trim() === "") {
         alert("Please Fill Out All Fields!");
         return;
       }
-      // Alert jika confirmPassword tidak cocok dengan password yang dimasukkan
-      if (password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
-      }
+
       // Promise untuk konfirmasi proses register
       var confirmation = confirm("Are You Sure You Want To Register?");
       if (confirmation) {
@@ -77,7 +67,7 @@
         localStorage.setItem("password", password);
 
         // Redirect menuju halaman Login
-        window.location.href = "login.php";
+        window.location.href = "login.php"; 
       }
     }
   </script>

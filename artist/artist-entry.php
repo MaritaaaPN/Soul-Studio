@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head> 
+<head>
 	<meta charset="UTF-8" />
 	<link rel="icon" href="../assets/SOUL1.png" />
 	<link rel="stylesheet" href="../css/admin.css" />
@@ -14,7 +14,7 @@
 <body>
 	<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-artworks"></i>
+			<i class="bx bx-category"></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
@@ -31,7 +31,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="../artworks/artworks.php">
+				<a href="../artworks/artwork.php">
 					<i class="bx bx-box"></i>
 					<span class="links_name">Artworks</span>
 				</a>
@@ -43,7 +43,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="../logout.php">
 					<i class="bx bx-log-out"></i>
 					<span class="links_name">Log out</span>
 				</a>
@@ -56,7 +56,7 @@
 				<i class="bx bx-menu sidebarBtn"></i>
 			</div>
 			<div class="profile-details">
-				<span class="name">Admin</span>
+				<span class="name">Soul Admin</span>
 			</div>
 		</nav>
 		<div class="home-content">
