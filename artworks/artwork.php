@@ -16,36 +16,36 @@ if ($_SESSION['email'] == null) {
 	<link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Soul Studio| Artworks</title>
-</head> 
+</head>
 
 <body>
-	<div class="sidebar">
+<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-category"></i>
+		<i class='bx bxs-spray-can'></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
 			<li>
 				<a href="../admin.php" class="active">
-					<i class="bx bx-grid-alt"></i>
+				<i class='bx bxs-dashboard' ></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
 			<li>
 				<a href="../artist/artist.php">
-					<i class="bx bx-box"></i>
+				<i class='bx bxs-user-rectangle'></i>
 					<span class="links_name">Artist</span>
 				</a>
 			</li>
 			<li>
 				<a href="../artworks/artwork.php">
-					<i class="bx bx-box"></i>
+				<i class='bx bxs-palette'></i>
 					<span class="links_name">Artworks</span>
 				</a>
 			</li>
 			<li>
 				<a href="../exhibition/exhibition.php">
-					<i class="bx bx-list-ul"></i>
+				<i class='bx bxs-store-alt'></i>
 					<span class="links_name">Exhibition</span>
 				</a>
 			</li>

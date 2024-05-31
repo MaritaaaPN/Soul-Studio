@@ -130,7 +130,8 @@ nav .sidebar-button i {
  }
  
 .btn-edit,
-.btn-delete {
+.btn-delete
+.btn_detail {
    padding: 8px 16px;
    margin-right: 8px;
    border: none;
@@ -150,8 +151,14 @@ nav .sidebar-button i {
    color: white;
 }
 
+.btn_detail {
+	background-color: #2196F3; /*blue */
+	color: white;
+ }
+
 .btn-edit:hover,
-.btn-delete:hover {
+.btn-delete:hover,
+.btn_detail:hover {
    background-color: #45a049; /* Darker green */ 
 }
 
@@ -183,6 +190,10 @@ nav .profile-details .admin_name {
 }
 
 .btn-tambah {
+	margin: 10px 0;
+}
+
+.btn-render {
 	margin: 10px 0;
 }
 
@@ -245,7 +256,7 @@ th, td {
 	background-color: #2196F3;
 	color: white;
  }
- .btn_detail {
+ /* .btn_detail {
 	background-color: #2196F3; 
 	color: white;
 	padding: 5px 10px;
@@ -254,9 +265,9 @@ th, td {
  }
  .btn_detail:hover {
 	background-color: #0d8bf0; 
- }
+ } */
 
-/* Responsive Media Query 
+/* Responsive Media Query */
 @media (max-width: 1240px) {
 	.sidebar {
 		width: 60px;
@@ -269,7 +280,7 @@ th, td {
 		left: 60px;
 	}
 	.sidebar.active ~ .home-section {
-		/* width: calc(100% - 220px); 
+		/* width: calc(100% - 220px); */
 		overflow: hidden;
 		left: 220px;
 	}
@@ -320,4 +331,4 @@ th, td {
 		left: 60px;
 		width: calc(100% - 60px);
 	}
-}*/
+}

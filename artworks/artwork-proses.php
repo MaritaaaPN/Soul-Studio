@@ -15,7 +15,7 @@ function upload() {
             </script>
         ";
 
-        return false; 
+        return false;
     }
 
     // cek apakah yang diupload adalah gambar

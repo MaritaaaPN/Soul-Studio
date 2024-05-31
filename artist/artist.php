@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['email'] == null) {
+	header('location:../login.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -12,33 +19,33 @@
 </head>
 
 <body>
-	<div class="sidebar">
+<div class="sidebar">
 		<div class="logo-details">
-			<i class="bx bx-category"></i>
+		<i class='bx bxs-spray-can'></i>
 			<span class="logo_name">Soul Studio</span>
 		</div>
 		<ul class="nav-links">
 			<li>
 				<a href="../admin.php" class="active">
-					<i class="bx bx-grid-alt"></i>
+				<i class='bx bxs-dashboard' ></i>
 					<span class="links_name">Dashboard</span>
 				</a>
 			</li>
-            <li>
+			<li>
 				<a href="../artist/artist.php">
-					<i class="bx bx-box"></i>
+				<i class='bx bxs-user-rectangle'></i>
 					<span class="links_name">Artist</span>
 				</a>
 			</li>
 			<li>
 				<a href="../artworks/artwork.php">
-					<i class="bx bx-box"></i>
+				<i class='bx bxs-palette'></i>
 					<span class="links_name">Artworks</span>
 				</a>
 			</li>
 			<li>
 				<a href="../exhibition/exhibition.php">
-					<i class="bx bx-list-ul"></i>
+				<i class='bx bxs-store-alt'></i>
 					<span class="links_name">Exhibition</span>
 				</a>
 			</li>
@@ -50,7 +57,7 @@
 			</li>
 		</ul>
 	</div>
-	<section class="home-section">
+	<section class="home-section">   
 		<nav>
 			<div class="sidebar-button">
 				<i class="bx bx-menu sidebarBtn"></i>
@@ -64,27 +71,58 @@
 			<button type="button" class="btn btn-tambah">
 				<a href="artist-entry.php">Tambah Data</a>
 			</button>
+			<button type="button" class="btn btn-render">
+				<a href="artist-cetak.php">Cetak Data</a>
+			</button>
 			<table class="table-data">
 				<thead>
 					<tr>
-						<th scope="col" style="width: 20%">Nama</th>
-                        <th scope="col" style="width: 20%">Tanggal Lahir</th>
-						<th scope="col" style="width: 15%">Kebangsaan</th>
-                        <th scope="col" style="width: 30%">Biografi</th>
-						<th scope="col" style="width: 30%">Action</th>
+						<th scope="col" style="width: 15%">Nama</th>
+                        <th scope="col" style="width: 15%">Tanggal Lahir</th>
+						<th scope="col" style="width: 10%">Kebangsaan</th>
+						<th scope="col" style="width: 10%">Gaya Seni</th>
+                        <th scope="col" style="width: 25%">Biografi</th>
+						<th scope="col" style="width: 25%">Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>Vincent Van Gogh</td>
-                        <td>30-03-1853</td>
-                        <td>Belanda</td>
-                        <td>Artis pasca-Impresionis</td>
-						<td>
-							<button class="btn-edit" onclick="editArtist()">Edit</button>
-							<button class="btn-delete" onclick="deleteArtist()">Hapus</button>
-						</td>
-					</tr>
+				<?php
+					include '../koneksi.php';
+					$sql = "SELECT * FROM tb_artist";
+					$result = mysqli_query($koneksi, $sql);
+					if (mysqli_num_rows($result) == 0) {
+						echo "
+			   <tr>
+				<td colspan='6' align='center'>
+                           Data Kosong
+                        </td>
+			   </tr>
+				";
+					}
+					while ($data = mysqli_fetch_assoc($result)) {
+						echo "
+                    <tr>
+					  <td>$data[nama]</td>
+                      <td>$data[lahir]</td>
+					  <td>$data[bangsa]</td>
+                      <td>$data[gaya]</td>
+					  <td>$data[bio]</td>
+                      <td >
+                        <a class='btn-edit' href=artist-edit.php?id=$data[id]>
+                               Edit
+                        </a> | 
+                        <a class='btn-delete' href=artist-hapus.php?id=$data[id]>
+                            Hapus
+                        </a>
+						<a>
+                         <a class='btn_detail'  onclick='showDetails(\"$data[nama]\", \"$data[lahir]\", \"$data[bangsa]\", \"$data[gaya]\", \"$data[bio]\")'>
+						 Detail
+                      </a>
+                      </td>
+                    </tr>
+                  ";
+					}
+					?>
 				</tbody>
 			</table>
 		</div>
@@ -98,6 +136,10 @@
 				sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
 			} else sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 		};
+
+		function showDetails(nama, lahir, bangsa, gaya, bio) {
+         alert(`Nama: ${nama}\nTanggal Lahir: ${lahir}\nKebangsaan: ${bangsa}\nGaya Seni: ${gaya}\nBiografi: ${bio}`);
+      }
 	</script>
 </body>
 
